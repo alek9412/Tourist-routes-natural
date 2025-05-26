@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Туристически маршрути и забележителности в България</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="tourist1.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Туристически маршрути и забележителности в България</h1>
+      <div class="controls">
+        <button id="add-point-btn">Добави точка</button>
+        <button id="add-line-btn">Добави маршрут</button>
+        <select id="filter-type">
+          <option value="all">Всички обекти</option>
+          <option value="landmark">Забележителности</option>
+          <option value="route">Маршрути</option>
+        </select>
+        <button id="clear-all">Изчисти всички</button>
+      </div>
+    </header>
+
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="sidebar">
+        <h2>Атрибути</h2>
+        <div id="attribute-table"></div>
+      </div>
+    </div>
+
+    <div id="feature-form" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Добавяне на обект</h2>
+        <form id="feature-form-data">
+          <div class="form-group">
+            <label for="feature-type">Тип:</label>
+            <select id="feature-type" required>
+              <option value="landmark">Забележителност</option>
+              <option value="route">Маршрут</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="feature-name">Име:</label>
+            <input type="text" id="feature-name" required>
+          </div>
+          <div class="form-group">
+            <label for="feature-description">Описание:</label>
+            <textarea id="feature-description"></textarea>
+          </div>
+          <button type="submit">Запази</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="tourist.js"></script>
+</body>
+</html>
